@@ -1,27 +1,16 @@
 package fr.caensup.students.entities;
 
-public class Etudiant {
+public class Etudiant extends Element{
     private String prenom;
-    private String nom;
-
-    private Groupe leGroupe;
-
     public Etudiant(){
-        this.prenom = "Inconnu";
-        this.nom = "Inconnu";
+        this("prenom étudiant inconnu","");
     }
 
     public Etudiant(String prenom, String nom){
+        super(nom);
         this.prenom = prenom;
-        this.nom = nom;
     }
 
-    public String getNom(){
-        return this.nom;
-    }
-    public void setNom(String nom){
-        this.nom = nom;
-    }
 
     public String getPrenom(){
         return this.prenom;
@@ -30,7 +19,4 @@ public class Etudiant {
         this.prenom = prenom;
     }
 
-    public void setLeGroupe(Groupe leGroupe){
-        this.leGroupe = leGroupe;
-    }
 }
