@@ -1,6 +1,7 @@
 package fr.caensup.students.entities;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Unite extends Element{
@@ -20,7 +21,7 @@ public class Unite extends Element{
         return elements;
     }
 
-    public boolean addElement(Element element){
+    protected boolean addElement(Element element){
         if(elements.add(element)){
             element.setUnite(this);
             return true;
@@ -34,5 +35,9 @@ public class Unite extends Element{
                 return true;
             }
             return false;
+    }
+
+    public void addElements(Element ...elements){
+        this.elements.addAll(Arrays.asList(elements));
     }
 }
